@@ -1,0 +1,49 @@
+=================================================================
+   RAPPORT FINAL — BIASDETECT RH
+   Explicabilité & Détection des Biais dans le Recrutement
+=================================================================
+
+1. DATASET
+   → Candidats analysés   : 500
+   → Variables utilisées  : 14 features
+   → Taux global retenu   : 56.4%
+
+2. PERFORMANCE DU MODÈLE (Random Forest)
+   → AUC-ROC  : 0.599
+   → F1 Score : 0.614
+   → Interprétation : modèle au-dessus du hasard (0.5)
+
+3. BIAIS DÉTECTÉS
+
+   ⚠️  BIAIS GENRE
+   → Hommes retenus  : 61.8%
+   → Femmes retenues : 50.0%
+   → Écart           : 11.8 points ← DISCRIMINATION
+
+   ⚠️  BIAIS ÂGE
+   → 20-30 ans : 52.6%
+   → 31-40 ans : 57.1%
+   → 41-55 ans : 58.6%
+
+   ⚠️  BIAIS STATUT MARITAL
+   → Célibataire     : 51.2%
+   → Divorcé(e)      : 54.9%
+   → Marié(e)        : 60.0%
+   → Écart max : 8.8 points
+
+4. TOP 5 VARIABLES LES PLUS INFLUENTES
+   1. Score Entretien (/100)    : 0.1576
+   2. Salaire Attendu (MAD)     : 0.1240
+   3. Distance (km)             : 0.1175
+   4. Score Test (/100)         : 0.1135
+   5. Expérience (ans)          : 0.0821
+
+5. RECOMMANDATIONS
+   → Supprimer Genre et Statut Marital des critères de sélection
+   → Mettre en place un audit régulier des décisions RH
+   → Former les recruteurs aux biais inconscients
+   → Utiliser uniquement : Score Test, Expérience, Diplôme
+
+=================================================================
+   FIN DU RAPPORT — BiasDetect RH
+=================================================================
